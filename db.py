@@ -4,6 +4,7 @@ from fastapi import FastAPI, Depends
 from sqlmodel import Session, create_engine, SQLModel
 from dotenv import load_dotenv
 
+# carga de variables de entorno
 load_dotenv()
 
 sqlite_url = os.getenv("POSTGRE_URL")
