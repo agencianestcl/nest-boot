@@ -16,7 +16,7 @@ from sqlmodel import select
 from .llmModel import LLMModel
 
 from .geminiService import GeminiService
-from .azureNiutomCompendium import AzureNiutomCompendium
+# from .azureNiutomCompendium import AzureNiutomCompendium
 from azure.search.documents.models import VectorizedQuery, VectorizableTextQuery
 
 load_dotenv()
@@ -73,15 +73,15 @@ class LangChainGemini(LLMModel):
         context              = langchainService.comunicacion
 
         if "hola" not in user_message.lower():
-            azureSearchClient = AzureNiutomCompendium(session)
-            azureSearchClient.setSearchClient()
-            search_results    = azureSearchClient.search_client.search(
-                None,
-                top=3,
-                vector_queries=[
-                    VectorizableTextQuery(text=user_message, k_nearest_neighbors=3, fields="text_vector")
-                ]
-            )
+            # azureSearchClient = AzureNiutomCompendium(session)
+            # azureSearchClient.setSearchClient()
+            # search_results    = azureSearchClient.search_client.search(
+            #     None,
+            #     top=3,
+            #     vector_queries=[
+            #         VectorizableTextQuery(text=user_message, k_nearest_neighbors=3, fields="text_vector")
+            #     ]
+            # )
 
             context += "Complementa el resultado con el siguiente contexto: " + azureSearchClient.obtainContextData(search_results)
 

@@ -9,7 +9,7 @@ from models import Pensamiento
 from sqlmodel import select
 from google.cloud import speech
 from .llmModel import LLMModel
-from .azureNiutomCompendium import AzureNiutomCompendium
+# from .azureNiutomCompendium import AzureNiutomCompendium
 from azure.search.documents.models import VectorizedQuery, VectorizableTextQuery
 
 load_dotenv()
@@ -153,15 +153,15 @@ class GeminiService(LLMModel):
         context = ""
 
         if "hola" not in user_message.lower():
-            azureSearchClient = AzureNiutomCompendium(session)
-            azureSearchClient.setSearchClient()
-            search_results    = azureSearchClient.search_client.search(
-                None,
-                top=3,
-                vector_queries=[
-                    VectorizableTextQuery(text=user_message, k_nearest_neighbors=3, fields="text_vector")
-                ]
-            )
+            # azureSearchClient = AzureNiutomCompendium(session)
+            # azureSearchClient.setSearchClient()
+            # search_results    = azureSearchClient.search_client.search(
+            #     None,
+            #     top=3,
+            #     vector_queries=[
+            #         VectorizableTextQuery(text=user_message, k_nearest_neighbors=3, fields="text_vector")
+            #     ]
+            # )
 
             context = "complementa el resultado con el siguiente contexto " + azureSearchClient.obtainContextData(search_results)
 

@@ -4,7 +4,7 @@ from .whatsAppService import WhatsAppService
 from .odooService import OdooService
 from .geminiService import GeminiService
 from .langChainService import LangChainGemini
-from .azureNiutomCompendium import AzureNiutomCompendium
+# from .azureNiutomCompendium import AzureNiutomCompendium
 from .tavilySearch import TavilySearch
 
 __all__ = [
@@ -14,6 +14,5 @@ __all__ = [
     "MessageHandler",
     "LangChainGemini",
     "GeminiService",
-    "AzureNiutomCompendium",
     "TavilySearch"
 ]
