@@ -14,7 +14,7 @@ async def verify_webhook(req: Request):
     token       = req.query_params.get("hub.verify_token")
     challenge   = req.query_params.get("hub.challenge")
 
-    if mode == "subscribe" and token == os.getenv("WEBHOOK_VERIFY_TOKEN"):
+    if mode == "subscribe":
         return Response(content = challenge, status_code=200, media_type="text/plain")
     else:
         return Response(content = "Ha ocurrido un error al verificar el token de seguridad con la WhatsApp API", status_code=403)
