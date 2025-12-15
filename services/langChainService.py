@@ -17,7 +17,7 @@ from .llmModel import LLMModel
 
 from .geminiService import GeminiService
 # from .azureNiutomCompendium import AzureNiutomCompendium
-from azure.search.documents.models import VectorizedQuery, VectorizableTextQuery
+# from azure.search.documents.models import VectorizedQuery, VectorizableTextQuery
 
 load_dotenv()
 # os.environ["GOOGLE_API_KEY"] = os.getenv("GEMINI_API_KEY")

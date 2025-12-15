@@ -10,7 +10,7 @@ from sqlmodel import select
 from google.cloud import speech
 from .llmModel import LLMModel
 # from .azureNiutomCompendium import AzureNiutomCompendium
-from azure.search.documents.models import VectorizedQuery, VectorizableTextQuery
+# from azure.search.documents.models import VectorizedQuery, VectorizableTextQuery
 
 load_dotenv()
 
