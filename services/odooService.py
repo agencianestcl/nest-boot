@@ -17,8 +17,10 @@ class OdooService:
         phone_code = wa_id[-6:]
         common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(OdooService.url))
         uid    = common.authenticate(OdooService.db, OdooService.username, OdooService.password, {})
+        print(uid)
         models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(OdooService.url))
         records = models.execute_kw(OdooService.db, uid, OdooService.password, 'res.partner', 'search_read', [[['phone', 'ilike', phone_code], ['phone', '!=', False]]], {'fields': ['x_studio_habilitado_para_campanas_wa', 'phone', 'id'], 'limit': 1})
         user_id = records[0].get("id", 0)
+        print(user_id, records)
         models.execute_kw(OdooService.db, uid, OdooService.password, 'res.partner', 'write', [[user_id], {'x_studio_habilitado_para_campanas_wa': update_value}])
 

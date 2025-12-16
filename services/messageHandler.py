@@ -89,7 +89,6 @@ class MessageHandler:
             
             await cls.handle_menu.handleMenuOption(handle.session, cls.user_pointer, sender_data, option_id, handle.message_from)
 
-
         elif handle.message_type == "audio":
 
             await cls.sender_message.sendListeningMessage(handle.message_from, handle.message_id)

@@ -12,7 +12,7 @@ class HandleMenu:
         wa_id           = sender_data.get("wa_id", None)
 
         if option_id == 'desactivar_campañas':
-            message_reply   = f"Entendemos su decisión, por eso, de ahora en adelante no recibirá más mensajes de nuestra agencia, a menos que cambie de opinión.\n\n En caso de querer activar este medio para comunicaciones, escriba la palabra *volver* y lo reactivaremos."
+            message_reply   = f"Entendemos su decisión, por eso, de ahora en adelante no recibirá más mensajes de nuestra agencia, a menos que cambie de opinión.\n\nEn caso de querer activar este medio para comunicaciones, escriba la palabra *volver* y lo reactivaremos."
             await OdooService.request_update(wa_id, "INACTIVO")
         elif option_id == 'activar_campañas':
             message_reply   = "¡Perfecto! Recibirá mensajes sobre anuncios de nuestra agencia de aquí en adelante ☺."

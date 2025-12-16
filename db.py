@@ -8,6 +8,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 sqlite_url = os.getenv("POSTGRE_URL")
+# sqlite_name = "db.sqlite3"
+# sqlite_url  = f"sqlite:///{sqlite_name}"
+
 engine       = create_engine(sqlite_url)
 
 def create_all_tables(app: FastAPI):
